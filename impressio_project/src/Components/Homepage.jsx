@@ -7,18 +7,21 @@ import { EditPage } from "./EditPage";
 export const PassportScreen = () => {
 const [camera, setCamera] = useState(false)
 const [name, setName] = useState('NAME')
+const [photo, setPhoto] = useState('')
 
 useEffect(()=>{
   const data = JSON.parse(localStorage.getItem('capturedImage'));
-  const obj = base64ToObject(data);
+  const obj = base64ToImg(data);
   if (localStorage.getItem('name')) {
     setName(localStorage.getItem('name'))
+    setPhoto(obj)
   }  
-  console.log(obj)
+
 },[])
+const data = JSON.parse(localStorage.getItem('capturedImage'));
+const obj = base64ToImg(data);
 
-
-function base64ToObject(base64Str) {
+function base64ToImg(base64Str) {
   try {
     const jsonString = atob(base64Str);
     const obj = JSON.parse(jsonString);
@@ -38,7 +41,7 @@ if(camera){
 }
   return (
     <div className="passport-screen">
-      <div className="div-2">
+   <div className="div-2">
         <div className="overlap">
           <div className="overlap-group">
             <img
@@ -59,6 +62,12 @@ if(camera){
                   <div className="overlap-3" onClick={() => setCamera(true)}>
                     <p className="i-m-ready-to">I’M READY TO DISCOVER THE WORLD !</p>
                     <div className="profile-photo">
+                      {
+                        obj && <img  className="captured_photo" 
+                        src={photo}
+                      />
+                      }
+                  
                       <div className="fallback-img">
                         <div className="group-wrapper">
                           <div className="group">

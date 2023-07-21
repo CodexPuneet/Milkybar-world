@@ -134,7 +134,9 @@
     transform: rotate(90deg);
     width: 96px;
   }
-  
+  .captured_photo{
+    width: 96px;
+  }
   .passport-screen .fallback-img {
     height: 109px;
     width: 95px;
