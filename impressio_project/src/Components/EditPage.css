@@ -1,0 +1,108 @@
+.edit-page {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .edit-page .div {
+    background-color: #ffffff;
+    border: 1px none;
+    height: 571px;
+    position: relative;
+    width: 350px;
+  }
+  
+  .edit-page .overlap {
+    background-color: #343434;
+    border: 3px dashed;
+    border-color: #afafaf;
+    border-radius: 7px;
+    height: 371px;
+    left: 15px;
+    position: absolute;
+    top: 15px;
+    width: 320px;
+  }
+  
+  .edit-page .shutter-button {
+    background-color: #f6ee22;
+    border-radius: 36px;
+    height: 65px;
+    left: 125px;
+    position: absolute;
+    top: 278px;
+    width: 65px;
+  }
+  
+  .edit-page .overlap-group-2 {
+    background-color: #0a84ff;
+    border-radius: 36px;
+    height: 53px;
+    left: 6px;
+    position: relative;
+    top: 6px;
+    width: 53px;
+  }
+  
+  .edit-page .vector {
+    height: 31px;
+    left: 7px;
+    position: absolute;
+    top: 10px;
+    width: 40px;
+  }
+  
+  .edit-page .img {
+    height: 12px;
+    left: 19px;
+    position: absolute;
+    top: 21px;
+    width: 14px;
+  }
+  
+  .edit-page .close-btn-instance {
+    left: 271px !important;
+    position: absolute !important;
+    top: 6px !important;
+  }
+
+  
+  .edit-page .div-wrapper {
+    background-color: #cfcfcf;
+    border-radius: 8px;
+    box-shadow: inset 2px 2px 1px #00000040;
+    height: 48px;
+    left: 49px;
+    position: absolute;
+    top: 409px;
+    width: 253px;
+  }
+  
+  .edit-page .div-wrapper::placeholder {
+    color: #979797;
+    font-family: "Hobeaux-Black", Helvetica;
+    font-size: 16px;
+    font-weight: 900;
+    left: 12px;
+    letter-spacing: 0.8px;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 16px;
+    white-space: nowrap;
+    width: 229px;
+  }
+  
+  .edit-page .buttons-instance {
+    background-color: #a1a1a1 !important;
+    left: 92px !important;
+    position: absolute !important;
+    top: 473px !important;
+  }
+  .edit-page .buttons-instance:hover{
+    background-color: #0394c3 !important;
+    color: #ffffff
+  }
+  

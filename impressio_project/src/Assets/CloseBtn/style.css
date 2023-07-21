@@ -1,0 +1,33 @@
+.close-btn {
+    height: 41px;
+    width: 38px;
+  }
+  
+  .close-btn .overlap-group {
+    background-color: #fff200;
+    border-radius: 17.94px/18.08px;
+    box-shadow: 0px 4px 0px #fff1005c;
+    height: 36px;
+    position: relative;
+    width: 36px;
+  }
+  
+  .close-btn .ellipse {
+    background-color: #fff200;
+    border-radius: 17.94px/18.08px;
+    box-shadow: 0px 4px 0px #fff1005c;
+    height: 36px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 36px;
+  }
+  
+  .close-btn .frame {
+    height: 19px;
+    left: 7px;
+    position: absolute;
+    top: 9px;
+    width: 21px;
+  }
+  

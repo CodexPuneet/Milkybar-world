@@ -1,0 +1,44 @@
+.buttons {
+    align-items: center;
+    border: 5px solid;
+    border-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 0px #00000040;
+    display: inline-flex;
+    gap: 10px;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px 40px;
+    position: relative;
+  }
+  
+  .buttons .button {
+    font-family: "Hobeaux-Black", Helvetica;
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .buttons.disabled {
+    background-color: #6f6f6f;
+    height: 75px;
+  }
+  
+  .buttons.primary-btn {
+    background-color: #0394c3;
+    height: 73px;
+  }
+  
+  .buttons.disabled .button {
+    color: #ffffff80;
+  }
+  
+  .buttons.primary-btn .button {
+    color: #ffffff;
+  }
+  
