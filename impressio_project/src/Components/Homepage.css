@@ -233,15 +233,18 @@
     font-family: "Hobeaux-Black", Helvetica;
     font-size: 30px;
     font-weight: 900;
-    left: -29px;
+    left: -34px; 
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
     text-shadow: 2px 2px 0px #021689;
-    top: 19px;
+    top: 12px;
     transform: rotate(90deg);
     white-space: nowrap;
+    width: 130px;
+    height: 50px;
   }
+  
   
   .passport-screen .text-wrapper-2 {
     color: #021689;

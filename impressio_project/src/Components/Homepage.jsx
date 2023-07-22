@@ -1,24 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import domtoimage from "dom-to-image";
 import { HomeIcon } from "../Assets/HomeIcon";
 import { MilkybarLogo } from "../Assets/MilkybarLogo";
 import "./Homepage.css";
 import { EditPage } from "./EditPage";
 
 export const PassportScreen = () => {
+  const entireScreenRef = useRef(null);
 const [camera, setCamera] = useState(false)
 const [name, setName] = useState('NAME')
-const [photo, setPhoto] = useState('')
 
 useEffect(()=>{
-  const data = JSON.parse(localStorage.getItem('capturedImage'));
-  const obj = base64ToImg(data);
   if (localStorage.getItem('name')) {
     setName(localStorage.getItem('name'))
-    setPhoto(obj)
   }  
 
 },[])
-const data = JSON.parse(localStorage.getItem('capturedImage'));
+const data = JSON.parse(localStorage.getItem('capturedImage')) ;
 const obj = base64ToImg(data);
 
 function base64ToImg(base64Str) {
@@ -27,11 +25,26 @@ function base64ToImg(base64Str) {
     const obj = JSON.parse(jsonString);
     return obj;
   } catch (error) {
-     console.error("Error decoding or parsing the base64 string:", error);
     return null;
   }
 }
 
+const handleDownload = (format) => {
+  if (!entireScreenRef.current) return;
+
+  domtoimage.toBlob(entireScreenRef.current).then((blob) => {
+    const screenshotUrl = URL.createObjectURL(blob);
+
+    const downloadLink = document.createElement("a");
+    downloadLink.href = screenshotUrl;
+    downloadLink.download = `passport_ready.${format}`;
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+
+    URL.revokeObjectURL(screenshotUrl); 
+  });
+};
 
 
 if(camera){
@@ -40,7 +53,7 @@ if(camera){
     )
 }
   return (
-    <div className="passport-screen">
+    <div className="passport-screen" ref={entireScreenRef}>
    <div className="div-2">
         <div className="overlap">
           <div className="overlap-group">
@@ -64,7 +77,7 @@ if(camera){
                     <div className="profile-photo">
                       {
                         obj && <img  className="captured_photo" 
-                        src={photo}
+                        src={obj}
                       />
                       }
                   
@@ -146,11 +159,14 @@ if(camera){
                 </div>
               </div>
             </div>
+            <button onClick={() => handleDownload("jpeg")}>
             <img
               className="group-3"
               alt="Group"
               src="https://generation-sessions.s3.amazonaws.com/23d9ece802f35b86acc77dc522da359d/img/group-18-1@2x.png"
             />
+            </button>
+         
           </div>
           <HomeIcon
             className="home-icon-instance"

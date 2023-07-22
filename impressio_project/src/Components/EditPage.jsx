@@ -40,7 +40,7 @@ export const EditPage = () => {
   const handleNameChange = (event) => {
     const nameInput = event.target.value;
     if (!/^[A-Za-z]+$/.test(nameInput) || nameInput.length > 30) {
-      return;
+      return alert('Invalid Text');
     }
     setName(nameInput);
   };
